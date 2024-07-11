@@ -1,0 +1,74 @@
+@use "./styles/partials/fonts" as *;
+@use "./styles/partials/variables" as *; 
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  font-size: 10px;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+    height: 3rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    border: none;
+    text-transform: uppercase;
+    background-color: $BrainFlix-Blue;
+    color: $White;
+
+}
+
+button:hover {
+    background-color: $BrainFlix-DarkBlue;
+}
+
+.section {
+    display: flex;
+    background-color: $White; //change this
+    padding: 1.6rem; //horizontal default margin
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem; // vertical default gap between components - margin
+}
+
+input, textarea {
+    background-color: $Alabaster;
+    border: 0.1rem solid $Mercury;
+    border-radius: 0.5rem;
+}
+
+label {
+    color: $Silver;
+    text-transform: uppercase;
+}
+
+span {
+    background-color: $Silver;
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+}

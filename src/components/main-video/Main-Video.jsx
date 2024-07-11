@@ -2,7 +2,7 @@ export default function  MainVideo () {
 
 return (
 
-    <div className="main-video">
+    <div className="main-video section">
         <video className="main-video__video"></video>
         <div className = "main-video__main-info">
             <h1 className="main-info__title"></h1>

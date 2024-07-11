@@ -2,11 +2,11 @@ function Header() {
 
     return( 
     
-    <header className="header">
-       <img className="header__logo"></img>
+    <header className="header section">
+       <img className="header__logo"/>
        <input className="header__search" type = "text"></input>
-       <img className="header__avatar"></img>
-       <button className="button button--upload" type="submit"></button>
+       <span className="header__avatar"></span>
+       <button className="button button--upload" type="submit">Upload</button>
     </header>
   )
 }
