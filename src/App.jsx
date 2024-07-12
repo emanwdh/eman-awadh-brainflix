@@ -3,7 +3,7 @@ import "./App.scss";
 import Header from "./components/header/Header";
 import MainVideo from "./components/main-video/Main-Video";
 import CommentForm from "./components/comment-form/CommentForm";
-import VideoSideBar from "./components/video-side-bar/video-side-bar";
+import VideoSideBar from "./components/video-side-bar/VideoSideBar";
 import SiteData from "./data/video-details.json";
 import MainCommentCounter from "./components/main-comment-counter/MainCommentCounter";
 import MainCommentsSection from "./components/MainCommentsSection/MainCommentsSection";

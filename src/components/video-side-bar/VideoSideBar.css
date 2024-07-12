@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf"), url("../../assets/Font/Alternative-files/AvenirNextLTPro.ttf") format "truetype";
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf"), url("../../assets/Font/Alternative-files/AvenirNextLTProDemi.ttf") format "truetype";
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf"), url("../../assets/Font/Alternative-files/AvenirNextLTProBold.ttf") format "truetype";
+  font-weight: 700;
+}
+.video-side-bar {
+  flex-direction: column;
+}
+.video-side-bar__title {
+  font-family: Avenir Next;
+  font-weight: 600;
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+  color: #AFAFAF;
+  text-transform: uppercase;
+}
+
+.next-video {
+  font-family: Avenir Next;
+  font-weight: 400;
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+  color: #000000;
+  display: flex;
+  gap: 1.6rem;
+}
+.next-video__preview {
+  height: 7rem;
+  border-radius: 4px;
+}
+.next-video__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.next-video__title {
+  font-weight: 600;
+}/*# sourceMappingURL=VideoSideBar.css.map */

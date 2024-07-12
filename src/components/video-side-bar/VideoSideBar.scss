@@ -1,0 +1,33 @@
+@use '../../styles/partials/variables' as *; 
+@use '../../styles/partials/mixins' as *; 
+
+
+.video-side-bar {
+    flex-direction: column;
+
+    &__title {
+        @include font-type($demi, 1.8rem, 1.3rem, $Silver);
+        text-transform: uppercase;
+    }
+}
+
+.next-video {
+    @include font-type($regular, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+    display: flex;
+    gap: 1.6rem;
+
+    &__preview {
+        height: 7rem;
+        border-radius: 4px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    &__title {
+        font-weight: $demi;
+    }
+}
