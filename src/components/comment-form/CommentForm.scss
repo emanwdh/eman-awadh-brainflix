@@ -1,0 +1,33 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.comment-form {
+  &__avatar {
+    flex: 2;
+  }
+
+  &__input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    flex: 7;
+  }
+
+  &__button {
+    @include font-type($demi, 3.2rem, 1.6rem, $White);
+    height: 4.5rem;
+  }
+}
+
+.input-field {
+  &__label {
+    @include font-type($demi, 1.8rem, 1.3rem, $Silver);
+  }
+  &__textarea {
+    height: 60%;
+  }
+
+  &__button {
+    @include font-type($demi, 3.2rem, 1.6rem, $White);
+  }
+}

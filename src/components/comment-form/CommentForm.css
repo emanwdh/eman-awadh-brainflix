@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf"), url("../../assets/Font/Alternative-files/AvenirNextLTPro.ttf") format "truetype";
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf"), url("../../assets/Font/Alternative-files/AvenirNextLTProDemi.ttf") format "truetype";
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf"), url("../../assets/Font/Alternative-files/AvenirNextLTProBold.ttf") format "truetype";
+  font-weight: 700;
+}
+.comment-form__avatar {
+  flex: 2;
+}
+.comment-form__input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  flex: 7;
+}
+.comment-form__button {
+  font-family: Avenir Next;
+  font-weight: 600;
+  line-height: 3.2rem;
+  font-size: 1.6rem;
+  color: #FFFFFF;
+  height: 4.5rem;
+}
+
+.input-field__label {
+  font-family: Avenir Next;
+  font-weight: 600;
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+  color: #AFAFAF;
+}
+.input-field__textarea {
+  height: 60%;
+}
+.input-field__button {
+  font-family: Avenir Next;
+  font-weight: 600;
+  line-height: 3.2rem;
+  font-size: 1.6rem;
+  color: #FFFFFF;
+}/*# sourceMappingURL=CommentForm.css.map */
