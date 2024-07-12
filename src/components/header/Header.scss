@@ -1,0 +1,36 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+
+
+.header {
+    flex-direction: column;
+
+    &__logo {
+        height: 2rem;
+    }
+
+    &__search-bar {
+        display: flex;
+        gap: 1.6rem;
+        width:  100%;
+        align-items: center;
+    
+    }
+}
+
+.search-bar {
+    &__search {
+       flex: 8;
+    }
+
+    &__avatar {
+       flex: 1;
+       
+    }
+}
+
+.button--upload {
+    @include font-type($demi, 3.2rem, 1.6rem, $White);
+    height: 4.5rem;
+}

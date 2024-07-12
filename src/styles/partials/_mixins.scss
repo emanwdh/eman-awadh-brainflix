@@ -1,0 +1,11 @@
+@use 'fonts' as *;
+@use 'variables' as *; 
+
+
+@mixin font-type ($weight, $line-height, $font-size, $color) {
+    font-family: Avenir Next;
+    font-weight: $weight;
+    line-height: $line-height;
+    font-size: $font-size;
+    color: $color;
+}
