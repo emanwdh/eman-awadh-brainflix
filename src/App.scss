@@ -34,25 +34,27 @@ button {
     border-radius: 0.5rem;
     border: none;
     text-transform: uppercase;
-    background-color: $BrainFlix-Blue;
-    color: $White;
+    background-color: $button-default;
+    color: $button-font-default;
 
 }
 
 button:hover {
-    background-color: $BrainFlix-DarkBlue;
+    background-color: $button-hover;
 }
 
 .section {
     display: flex;
-    background-color: $White; //change this
+    background-color: $main-background; //change this
     padding: 1.6rem; //horizontal default margin
+    gap: 1.6rem;
 }
 
 body {
     display: flex;
     flex-direction: column;
     gap: 1.6rem; // vertical default gap between components - margin
+    color: $font-color-default;
 }
 
 input, textarea {
@@ -67,8 +69,12 @@ label {
 }
 
 span {
-    background-color: $Silver;
+    background-color: $avatar-default;
     border-radius: 50%;
     height: 4rem;
     width: 4rem;
+}
+
+form {
+    display: flex;
 }

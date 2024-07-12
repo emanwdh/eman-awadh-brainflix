@@ -1,13 +1,33 @@
-// Primary 
+// Primary colors
 $BrainFlix-Black: #323232;
 $BrainFlix-Blue: #0095FF;
 $Silver: #AFAFAF;
 $White: #FFFFFF;
 
 
-//Secondary 
+//Secondary colors
 
 $BrainFlix-DarkBlack: #000000;
 $BrainFlix-DarkBlue: #0065AD;
 $Mercury: #E1E1E1;
 $Alabaster: #FAFAFA;
+
+//semantic colors
+
+//button 
+$button-default: $BrainFlix-Blue;
+$button-hover: $BrainFlix-DarkBlue;
+$button-font-default: $White;
+
+//background
+$main-background: $White;
+
+//font 
+$font-color-default: $BrainFlix-DarkBlack;
+
+//Avatar
+$avatar-default: $Mercury;
+
+//Diver 
+$divider-default: $Mercury;
+
