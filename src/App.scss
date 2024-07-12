@@ -1,5 +1,6 @@
 @use "./styles/partials/fonts" as *;
 @use "./styles/partials/variables" as *; 
+@use "./styles/partials/mixins" as *; 
 
 
 
@@ -82,4 +83,9 @@ span {
 
 form {
     display: flex;
+}
+
+h1 {
+  @include font-type($bold, 3.2rem, 2.4rem, $BrainFlix-DarkBlack);
+  margin-top: 0.8rem;
 }

@@ -1,0 +1,59 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.main-video {
+    flex-direction: column;
+
+    &__video {
+        background-color: $BrainFlix-DarkBlack;
+    }
+}
+
+.main-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    &__video-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+
+}
+
+
+.video-details {
+
+    &__group {
+        @include font-type($regular, 1.8rem, 1.3rem, $Silver);
+    }
+
+    &__username {
+        @include font-type($demi, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+    }
+
+    &__stats {
+        display:flex;
+        gap: 7rem;
+        border-top: 1px solid $divider-default;
+        border-bottom: 1px solid $divider-default;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+    }
+
+    &__group{
+        display: flex;
+        flex-direction: column;
+        gap:1.6rem;
+    }
+
+    &__numbers {
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+
+

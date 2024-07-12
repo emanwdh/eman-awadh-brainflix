@@ -91,4 +91,13 @@ span {
 
 form {
   display: flex;
+}
+
+h1 {
+  font-family: Avenir Next;
+  font-weight: 700;
+  line-height: 3.2rem;
+  font-size: 2.4rem;
+  color: #000000;
+  margin-top: 0.8rem;
 }/*# sourceMappingURL=App.css.map */
