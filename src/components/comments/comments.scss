@@ -1,0 +1,29 @@
+@use '../../styles/partials/mixins' as *; 
+@use '../../styles/partials/variables' as *;
+
+.comment{
+    display:flex;
+    gap: 1.6rem;
+    position: relative;
+
+    &__info{
+        display: flex;
+        flex-direction: column;
+        gap:1rem;
+        @include font-type($regular, 1.3rem, 1.3rem, $BrainFlix-DarkBlack);
+
+    }
+
+    &__username{
+        font-weight: $demi;
+    }
+
+    &__date{
+        position: absolute;
+        right: 0;
+    }
+
+
+    
+}
+

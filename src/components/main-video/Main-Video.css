@@ -61,4 +61,11 @@
 .video-details__numbers {
   display: flex;
   gap: 1rem;
+}
+.video-details__description {
+  font-family: Avenir Next;
+  font-weight: 400;
+  line-height: 1.8rem;
+  font-size: 1.3rem;
+  color: #000000;
 }/*# sourceMappingURL=Main-Video.css.map */

@@ -53,6 +53,10 @@
         display: flex;
         gap: 1rem;
     }
+
+    &__description {
+        @include font-type($regular, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+    }
 }
 
 
