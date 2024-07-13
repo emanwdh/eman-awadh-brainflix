@@ -11,7 +11,7 @@ export default function  MainVideo ({data, relativeDate, VideoList, VideoMain}) 
 return (
 
     <div className="main-video section">
-        <video className="main-video__video" src = {VideoMain.video}></video>
+        <video controls className="main-video__video" src = {VideoMain.video} poster = {VideoMain.image}></video>
         <div className = "main-video__main-info main-info">
             <h1 className="main-info__title">{VideoMain.title}</h1>
             <div className="main-info__video-details">
