@@ -3,6 +3,7 @@
 
 .main-video {
     flex-direction: column;
+    padding-top: 0;
 
     &__video {
         background-color: $BrainFlix-DarkBlack;

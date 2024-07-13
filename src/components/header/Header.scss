@@ -1,36 +1,67 @@
-@use '../../styles/partials/variables' as *;
-@use '../../styles/partials/mixins' as *;
-
-
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
 .header {
-    flex-direction: column;
+  flex-direction: column;
 
-    &__logo {
-        height: 2rem;
-    }
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+  }
 
-    &__search-bar {
-        display: flex;
-        gap: 1.6rem;
-        width:  100%;
-        align-items: center;
-    
+  &__logo {
+    height: 2rem;
+
+    @include tablet {
+        height: 2.5rem;
     }
+  }
+
+  &__search-bar {
+    display: flex;
+    gap: 1.6rem;
+    width: 100%;
+    align-items: center;
+
+    @include tablet {
+      justify-content: flex-end;
+      gap: 45%;
+    }
+  }
 }
 
 .search-bar {
-    &__search {
-       flex: 8;
+  &__search {
+    flex: 8;
+    background-image: url("../../assets/Font/Icons/search.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem;
+    padding-left: clamp(3.5rem, 4rem, 5rem);
+    @include tablet {
+      width: 35%;
+      flex: none;
+      height: 4.5rem; 
+      padding-left: 3.5rem;
     }
+  }
 
-    &__avatar {
-       flex: 1;
-       
+  &__avatar {
+    flex: 1;
+    @include tablet {
+    flex: none;
+    height: 4.5rem;
+    width: 4.5rem;
     }
+  }
 }
 
 .button--upload {
-    @include font-type($demi, 3.2rem, 1.6rem, $White);
-    height: 4.5rem;
+  @include font-type($demi, 3.2rem, 1.6rem, $White);
+  height: 4.5rem;
+
+  @include tablet {
+    position: absolute;
+    width: 30%;
+    right: 11%;
+  }
 }
