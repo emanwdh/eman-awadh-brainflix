@@ -11,7 +11,7 @@ import SideBarVideos from "./components/side-bar-videos/Side-Bar-Videos";
 
 function App() {
 
-  const [VideoList, setVideoList] = useState(SiteData);
+  const [VideoList, setVideoList] = useState(SiteData.slice(1,SiteData.length));
   const [VideoMain, setMainVideo] = useState(SiteData[0]);
 
   const MainVideoHandler = (id)=>{
@@ -88,7 +88,8 @@ function App() {
       <CommentForm data={SiteData} 
       VideoMain={VideoMain}/>
       <MainCommentsSection data={SiteData}
-         relativeDate={relativeDate} />
+         relativeDate={relativeDate} 
+         VideoMain={VideoMain}/>
       <VideoSideBar data={SiteData} 
        setVideoList={setVideoList}
        VideoList={VideoList}

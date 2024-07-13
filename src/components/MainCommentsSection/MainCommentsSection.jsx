@@ -2,11 +2,18 @@ import Comments from "../comments/comments"
 import './MainCommentsSection.scss'
 
 
-export default function MainCommentsSection({data, relativeDate}) {
+export default function MainCommentsSection({relativeDate, VideoMain}) {
+
+    const CommentArray = VideoMain.comments;
+
     return ( 
      
        <div className="main-comments section">
-            <Comments data={data} relativeDate={relativeDate}/>
+            {CommentArray.map((comment)=>  <Comments 
+            comment={comment}
+            relativeDate={relativeDate}
+                 />)}
+        
         </div>
       
     ) 

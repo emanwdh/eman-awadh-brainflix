@@ -3,8 +3,7 @@ import './VideoSideBar.scss';
 import { useState } from "react";
 
 
-export default function  VideoSideBar({data, VideoList, MoveHandler}) {
-        console.log(VideoList)
+export default function  VideoSideBar({data, VideoList, MoveHandler, setVideoList}) {
 
         return (
             <>
