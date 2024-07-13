@@ -1,10 +1,11 @@
 import './MainCommentCounter.scss'
 
-export default function MainCommentCounter({data}) {
-    console.log(data[0].comments);
+export default function MainCommentCounter({VideoMain}) {
+    console.log(VideoMain);
+    console.log(VideoMain.comments);
     return (
         <>
-        <p className="main-comments-counter section">{data[0].comments.length} Comments</p>    
+        <p className="main-comments-counter section">{VideoMain.comments.length} Comments</p>    
         </>
     )
 

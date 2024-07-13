@@ -12,14 +12,25 @@ import SideBarVideos from "./components/side-bar-videos/Side-Bar-Videos";
 function App() {
 
   const [VideoList, setVideoList] = useState(SiteData);
+  const [VideoMain, setMainVideo] = useState(SiteData[0]);
+
+  const MainVideoHandler = (id)=>{
+    const newMainVideo = SiteData.filter((video)=> video.id == id)
+    console.log(newMainVideo[0]);
+    setMainVideo(VideoMain => newMainVideo[0]);
+    console.log(VideoMain);
+}
+
 
   const MoveHandler  = (id) => {
     const newArray = SiteData.filter((video) => video.id !== id)
     setVideoList(newArray);
     console.log(newArray);
     console.log(id);
+    MainVideoHandler(id);
   
   }
+
 
 
 
@@ -66,11 +77,16 @@ function App() {
   return (
     <>
       <Header />
-      <MainVideo data={SiteData}
+      <MainVideo 
                  relativeDate={relativeDate}
-            
+                 VideoList={VideoList}
+                 VideoMain={VideoMain}
+                 setMainVideo={setMainVideo}
                   />
-      <CommentForm data={SiteData} />
+      <MainCommentCounter 
+      VideoMain={VideoMain} />           
+      <CommentForm data={SiteData} 
+      VideoMain={VideoMain}/>
       <MainCommentsSection data={SiteData}
          relativeDate={relativeDate} />
       <VideoSideBar data={SiteData} 

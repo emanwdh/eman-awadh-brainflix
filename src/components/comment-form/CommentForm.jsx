@@ -1,10 +1,9 @@
 import MainCommentCounter from "../main-comment-counter/MainCommentCounter";
 import "./CommentForm.scss"
 
-export default function CommentForm({ data }) {
+export default function CommentForm({ data, VideoMain }) {
   return (
     <>
-      <MainCommentCounter data={data} />
       <form className="comment-form section">
         <span><span className="comment-form__avatar"></span></span>
         <div className="comment-form__input-field">
