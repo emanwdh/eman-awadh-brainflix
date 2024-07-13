@@ -2,6 +2,15 @@
 @use "../../styles/partials/variables" as *;
 
 .comment-form {
+  border-bottom: 1px solid $divider-default;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  margin-right: 1.6rem;
+  margin-left: 1.6rem;
+
+  @include tablet {
+    position: relative;
+  }
   &__avatar {
     flex: 2;
   }
@@ -11,23 +20,38 @@
     flex-direction: column;
     gap: 1.6rem;
     flex: 7;
-  }
+    padding-left: 1.6rem;
 
-  &__button {
-    @include font-type($demi, 3.2rem, 1.6rem, $White);
-    height: 4.5rem;
+    @include tablet {
+      flex-direction: row;
+    }
   }
 }
 
 .input-field {
   &__label {
     @include font-type($demi, 1.8rem, 1.3rem, $Silver);
+
+    @include tablet {
+      position: absolute;
+      top: -1rem;
+    }
   }
   &__textarea {
     height: 60%;
+    @include tablet {
+      width: 60%;
+      height: 100%;
+    }
   }
 
   &__button {
+    height: 4.5rem;
     @include font-type($demi, 3.2rem, 1.6rem, $White);
+
+    @include tablet {
+      width: 40%;
+      height: 5rem;
+    }
   }
 }
