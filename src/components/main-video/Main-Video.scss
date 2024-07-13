@@ -42,12 +42,22 @@
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
 
+        @include tablet {
+            border-top: none;
+            justify-content: space-between;
+            align-items: center;
+        }
+
     }
 
     &__group{
         display: flex;
         flex-direction: column;
         gap:1.6rem;
+        @include tablet {
+            flex-direction: row;
+            align-items: center;
+        }
     }
 
     &__numbers {
