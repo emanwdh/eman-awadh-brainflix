@@ -1,27 +1,27 @@
 import SideBarVideos from "../side-bar-videos/Side-Bar-Videos";
 import './VideoSideBar.scss';
+import { useState } from "react";
 
 
-
-export default function  VideoSideBar({data}) {
-    
-    
-
+export default function  VideoSideBar({data, VideoList, MoveHandler}) {
+        console.log(VideoList)
 
         return (
             <>
             <div className="video-side-bar section">
                 <p className="video-side-bar__title">Next Videos</p>
-                {data.map((video) => (
-                     <div className = "next-video">
-                        <img className="next-video__preview" src = {video.image}></img>
-                        <div className="next-video__description">
-                            <p className="next-video__title">{video.title}</p>
-                            <p className="next-video__username">{video.channel}</p>
-                        </div>
-                    </div>
-                    ))};
+                {VideoList.map((video) => ( 
+                <SideBarVideos
+                key = {video.id}
+                id ={video.id}
+                data = {data}
+                video = {video}
+                MoveHandler={MoveHandler}/>))}
             </div>
             </>
         )
 }
+
+
+
+

@@ -7,9 +7,21 @@ import VideoSideBar from "./components/video-side-bar/VideoSideBar";
 import SiteData from "./data/video-details.json";
 import MainCommentCounter from "./components/main-comment-counter/MainCommentCounter";
 import MainCommentsSection from "./components/MainCommentsSection/MainCommentsSection";
+import SideBarVideos from "./components/side-bar-videos/Side-Bar-Videos";
 
 function App() {
-  const [count, setCount] = useState(0);
+
+  const [VideoList, setVideoList] = useState(SiteData);
+
+  const MoveHandler  = (id) => {
+    const newArray = SiteData.filter((video) => video.id !== id)
+    setVideoList(newArray);
+    console.log(newArray);
+    console.log(id);
+  
+  }
+
+
 
 
 
@@ -51,19 +63,20 @@ function App() {
 
 };
 
-
-  console.log(SiteData);
-
   return (
     <>
       <Header />
       <MainVideo data={SiteData}
                  relativeDate={relativeDate}
+            
                   />
       <CommentForm data={SiteData} />
       <MainCommentsSection data={SiteData}
          relativeDate={relativeDate} />
-      <VideoSideBar data={SiteData} />
+      <VideoSideBar data={SiteData} 
+       setVideoList={setVideoList}
+       VideoList={VideoList}
+       MoveHandler={MoveHandler}/>
     </>
   );
 }
