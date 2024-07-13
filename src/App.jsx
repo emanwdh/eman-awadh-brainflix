@@ -77,23 +77,29 @@ function App() {
   return (
     <>
       <Header />
-      <MainVideo 
-                 relativeDate={relativeDate}
-                 VideoList={VideoList}
-                 VideoMain={VideoMain}
-                 setMainVideo={setMainVideo}
-                  />
-      <MainCommentCounter 
-      VideoMain={VideoMain} />           
-      <CommentForm data={SiteData} 
-      VideoMain={VideoMain}/>
-      <MainCommentsSection data={SiteData}
-         relativeDate={relativeDate} 
-         VideoMain={VideoMain}/>
-      <VideoSideBar data={SiteData} 
-       setVideoList={setVideoList}
-       VideoList={VideoList}
-       MoveHandler={MoveHandler}/>
+      <div className="main-section">
+        <div className="main-video-section">
+            <MainVideo 
+                      relativeDate={relativeDate}
+                      VideoList={VideoList}
+                      VideoMain={VideoMain}
+                      setMainVideo={setMainVideo}
+                        />
+            <MainCommentCounter 
+            VideoMain={VideoMain} />           
+            <CommentForm data={SiteData} 
+            VideoMain={VideoMain}/>
+            <MainCommentsSection data={SiteData}
+              relativeDate={relativeDate} 
+              VideoMain={VideoMain}/>
+        </div>
+        <div className="next-video-section">
+        <VideoSideBar data={SiteData} 
+        setVideoList={setVideoList}
+        VideoList={VideoList}
+        MoveHandler={MoveHandler}/>
+        </div>
+      </div>
     </>
   );
 }

@@ -89,3 +89,18 @@ h1 {
   @include font-type($bold, 3.2rem, 2.4rem, $BrainFlix-DarkBlack);
   margin-top: 0.8rem;
 }
+
+.main-section {
+  @include desktop {
+    display: flex;
+  }
+
+  .main-video-section {
+    width: 80%;
+  }
+
+  .next-video-section {
+    width: 30%;
+  }
+ 
+}

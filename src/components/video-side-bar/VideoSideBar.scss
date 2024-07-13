@@ -5,6 +5,7 @@
 .video-side-bar {
     flex-direction: column;
 
+
     &__title {
         @include font-type($demi, 1.8rem, 1.3rem, $Silver);
         text-transform: uppercase;
