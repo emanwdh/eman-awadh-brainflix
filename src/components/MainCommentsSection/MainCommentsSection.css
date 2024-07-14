@@ -15,4 +15,10 @@
 }
 .main-comments {
   flex-direction: column;
+}
+@media (min-width: 768px) {
+  .main-comments {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=MainCommentsSection.css.map */

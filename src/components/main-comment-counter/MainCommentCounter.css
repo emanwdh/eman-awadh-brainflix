@@ -19,4 +19,10 @@
   line-height: 1.8rem;
   font-size: 1.3rem;
   color: #000000;
+}
+@media (min-width: 768px) {
+  .main-comments-counter {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }/*# sourceMappingURL=MainCommentCounter.css.map */

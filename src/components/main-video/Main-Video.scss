@@ -4,9 +4,11 @@
 .main-video {
     flex-direction: column;
     padding-top: 0;
+    margin: 0.8rem 0 0;
 
     &__video {
         background-color: $BrainFlix-DarkBlack;
+
     }
 }
 

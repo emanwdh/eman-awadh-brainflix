@@ -3,4 +3,9 @@
 
 .main-comments {
     flex-direction: column;
+
+    @include tablet {
+        margin-right: 0;
+        margin-left: 0;
+    }
 }

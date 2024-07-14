@@ -15,6 +15,8 @@
 }
 .main-video {
   flex-direction: column;
+  padding-top: 0;
+  margin: 0.8rem 0 0;
 }
 .main-video__video {
   background-color: #000000;
@@ -53,10 +55,23 @@
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+@media (min-width: 768px) {
+  .video-details__stats {
+    border-top: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
 .video-details__group {
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
+}
+@media (min-width: 768px) {
+  .video-details__group {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .video-details__numbers {
   display: flex;

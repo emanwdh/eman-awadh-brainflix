@@ -56,9 +56,22 @@ button:hover {
 
 .section {
   display: flex;
+  flex-direction: column;
   background-color: #FFFFFF;
-  padding: 1.6rem;
   gap: 1.6rem;
+  margin: 1.6rem 1.6rem 0;
+}
+@media (min-width: 768px) {
+  .section {
+    margin: 2.4rem 2.4rem 0;
+    gap: 2.4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .section {
+    margin: 2.4rem 2.4rem 0;
+    gap: 2.4rem;
+  }
 }
 
 body {
@@ -68,7 +81,8 @@ body {
   color: #000000;
 }
 
-input, textarea {
+input,
+textarea {
   background-color: #FAFAFA;
   border: 0.1rem solid #E1E1E1;
   border-radius: 0.5rem;
@@ -76,12 +90,18 @@ input, textarea {
   padding: 1.2rem;
 }
 
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0095FF;
+}
+
 label {
   color: #AFAFAF;
   text-transform: uppercase;
 }
 
-span {
+.avatar {
   background-color: #E1E1E1;
   border-radius: 50%;
   height: 4rem;
@@ -100,4 +120,41 @@ h1 {
   font-size: 2.4rem;
   color: #000000;
   margin-top: 0.8rem;
+}
+
+.main-section {
+  margin-bottom: 1.6rem;
+}
+@media (min-width: 768px) {
+  .main-section {
+    margin-bottom: 2.4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .main-section {
+    display: flex;
+    margin-bottom: 2.4rem;
+  }
+}
+@media (min-width: 768px) {
+  .main-section .main-video-section {
+    margin: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .main-section .main-video-section {
+    width: 80%;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) {
+  .main-section .next-video-section {
+    margin: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .main-section .next-video-section {
+    width: 30%;
+    margin: 0;
+  }
 }/*# sourceMappingURL=App.css.map */

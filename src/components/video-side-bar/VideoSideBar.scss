@@ -5,6 +5,11 @@
 .video-side-bar {
     flex-direction: column;
 
+    @include tablet {
+        margin-right: 0; 
+        margin-left: 0;
+    }
+
 
     &__title {
         @include font-type($demi, 1.8rem, 1.3rem, $Silver);

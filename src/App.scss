@@ -1,8 +1,6 @@
 @use "./styles/partials/fonts" as *;
-@use "./styles/partials/variables" as *; 
-@use "./styles/partials/mixins" as *; 
-
-
+@use "./styles/partials/variables" as *;
+@use "./styles/partials/mixins" as *;
 
 *,
 *::before,
@@ -31,58 +29,75 @@ select {
   height: 3.6rem;
 }
 
-
 button {
-    height: 3rem;
-    width: 100%;
-    border-radius: 0.5rem;
-    border: none;
-    text-transform: uppercase;
-    background-color: $button-default;
-    color: $button-font-default;
+  height: 3rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: none;
+  text-transform: uppercase;
+  background-color: $button-default;
+  color: $button-font-default;
 }
 
 button:hover {
-    background-color: $button-hover;
+  background-color: $button-hover;
 }
 
 .section {
-    display: flex;
-    background-color: $main-background; //change this
-    padding: 1.6rem; //horizontal default margin
-    gap: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  background-color: $main-background; //change this
+  gap: 1.6rem;
+  margin: 1.6rem 1.6rem 0;
+
+  @include tablet {
+    margin: 2.4rem 2.4rem 0;
+    gap: 2.4rem;
+  }
+
+  @include desktop {
+    margin: 2.4rem 2.4rem 0;
+    gap: 2.4rem;
+  }
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem; // vertical default gap between components - margin
-    color: $font-color-default;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem; // vertical default gap between components - margin
+  color: $font-color-default;
 }
 
-input, textarea {
-    background-color: $Alabaster;
-    border: 0.1rem solid $Mercury;
-    border-radius: 0.5rem;
-    resize: none;
-    padding: 1.2rem;
+input,
+textarea {
+  background-color: $Alabaster;
+  border: 0.1rem solid $Mercury;
+  border-radius: 0.5rem;
+  resize: none;
+  padding: 1.2rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: $default-form-active;
 }
 
 label {
-    color: $Silver;
-    text-transform: uppercase;
+  color: $Silver;
+  text-transform: uppercase;
 }
 
 .avatar {
-    background-color: $avatar-default;
-    border-radius: 50%;
-    height: 4rem;
-    width: 4rem;
-    display: flex;
+  background-color: $avatar-default;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  display: flex;
 }
 
 form {
-    display: flex;
+  display: flex;
 }
 
 h1 {
@@ -91,16 +106,33 @@ h1 {
 }
 
 .main-section {
+  margin-bottom: 1.6rem;
+
+  @include tablet {
+    margin-bottom: 2.4rem;
+  }
   @include desktop {
     display: flex;
+    margin-bottom: 2.4rem;
   }
 
   .main-video-section {
-    width: 80%;
+    @include tablet {
+      margin: 0;
+    }
+    @include desktop {
+      width: 80%;
+      margin: 0;
+    }
   }
 
   .next-video-section {
-    width: 30%;
+    @include tablet {
+      margin:0;
+    }
+    @include desktop {
+      width: 30%;
+      margin:0;
+    }
   }
- 
 }

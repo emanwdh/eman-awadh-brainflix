@@ -16,6 +16,12 @@
 .video-side-bar {
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .video-side-bar {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 .video-side-bar__title {
   font-family: Avenir Next;
   font-weight: 600;
