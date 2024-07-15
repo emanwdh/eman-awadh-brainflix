@@ -68,6 +68,12 @@ body {
   color: $font-color-default;
 }
 
+p {
+  @include desktop {
+    @include font-type($regular, 2.2rem, 1.4rem, $BrainFlix-DarkBlack);
+  }
+}
+
 input,
 textarea {
   background-color: $Alabaster;
@@ -81,6 +87,17 @@ input:focus,
 textarea:focus {
   outline: none;
   border-color: $default-form-active;
+}
+
+input::placeholder, 
+textarea::placeholder{
+  font-size: 1.3rem;
+  @include tablet {
+    font-size: 1.4rem;
+  }
+  @include desktop{
+    font-size: 1.4rem;
+  }
 }
 
 label {
@@ -102,7 +119,27 @@ form {
 
 h1 {
   @include font-type($bold, 3.2rem, 2.4rem, $BrainFlix-DarkBlack);
+
+  @include tablet {
+    @include font-type($bold, 4.4rem, 3.3rem, $BrainFlix-DarkBlack);
+  }
+
+  @include desktop {
+    @include font-type($bold, 4.4rem, 3.3rem, $BrainFlix-DarkBlack);
+  }
   margin-top: 0.8rem;
+}
+
+p {
+  @include font-type($regular, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+
+  @include tablet {
+    @include font-type($regular, 2.2rem, 1.4rem, $BrainFlix-DarkBlack);
+  }
+
+  @include desktop {
+    @include font-type($regular, 2.2rem, 1.4rem, $BrainFlix-DarkBlack);
+  }
 }
 
 .main-section {
@@ -113,26 +150,35 @@ h1 {
   }
   @include desktop {
     display: flex;
+    flex-direction: row;
     margin-bottom: 2.4rem;
   }
 
   .main-video-section {
+    margin: 0;
+    padding-right: 0;
+    padding-left: 0;
     @include tablet {
       margin: 0;
     }
     @include desktop {
       width: 80%;
       margin: 0;
+      border-right: 1px solid $divider-default;
+      padding-right: 2.4rem;
     }
   }
 
   .next-video-section {
+    padding-right: 0;
+    padding-left: 0;
+    margin: 0;
     @include tablet {
-      margin:0;
+      margin: 0;
     }
     @include desktop {
       width: 30%;
-      margin:0;
+      margin: 0;
     }
   }
 }

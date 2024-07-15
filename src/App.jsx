@@ -8,6 +8,7 @@ import SiteData from "./data/video-details.json";
 import MainCommentCounter from "./components/main-comment-counter/MainCommentCounter";
 import MainCommentsSection from "./components/MainCommentsSection/MainCommentsSection";
 import SideBarVideos from "./components/side-bar-videos/Side-Bar-Videos";
+import Video from "./components/Video/Video"
 
 function App() {
   const [VideoList, setVideoList] = useState(
@@ -67,6 +68,9 @@ function App() {
   return (
     <>
       <Header />
+      <Video 
+         VideoMain={VideoMain}
+        />
       <div className="main-section section">
         <div className="main-video-section section">
           <MainVideo

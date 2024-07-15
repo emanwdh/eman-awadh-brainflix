@@ -66,6 +66,10 @@
   }
 }
 .input-field__button {
+  background-image: url("../../assets/Font/Icons/add_comment.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem;
+  padding-left: 4rem;
   height: 4.5rem;
   font-family: Avenir Next;
   font-weight: 600;

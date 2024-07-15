@@ -13,20 +13,7 @@
   src: url("../../assets/Font/AvenirNextLTPro-Bold.otf"), url("../../assets/Font/Alternative-files/AvenirNextLTProBold.ttf") format "truetype";
   font-weight: 700;
 }
-.comment {
-  display: flex;
-  gap: 1.6rem;
-  position: relative;
-}
-.comment__info {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.comment__username {
-  font-weight: 600;
-}
-.comment__date {
-  position: absolute;
-  right: 0;
-}/*# sourceMappingURL=comments.css.map */
+.main-video__video {
+  margin-right: 0;
+  margin-left: 0;
+}/*# sourceMappingURL=video.css.map */

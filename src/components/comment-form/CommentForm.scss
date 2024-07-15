@@ -48,6 +48,11 @@
   }
 
   &__button {
+
+    background-image: url("../../assets/Font/Icons/add_comment.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem;
+    padding-left: clamp(3.5rem, 4rem, 5rem);
     height: 4.5rem;
     @include font-type($demi, 3.2rem, 1.6rem, $White);
 

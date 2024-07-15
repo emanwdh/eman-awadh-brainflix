@@ -1,6 +1,6 @@
 import "./Main-Video.scss";
-import likesIcon from "../../assets/Font/Icons/likes.svg";
-import viewsIcon from "../../assets/Font/Icons/views.svg";
+import likesIcon from "../../assets/Icons/likes.svg";
+import viewsIcon from "../../assets/Icons/views.svg";
 
 export default function MainVideo({
   data,
@@ -8,17 +8,9 @@ export default function MainVideo({
   VideoList,
   VideoMain,
 }) {
-  console.log(VideoList);
-  console.log(VideoMain);
 
   return (
     <>
-      <video
-        controls
-        className="main-video__video"
-        src={VideoMain.video}
-        poster={VideoMain.image}
-      ></video>
       <div className="main-video section">
         <div className="main-video__main-info main-info">
           <h1 className="main-info__title">{VideoMain.title}</h1>

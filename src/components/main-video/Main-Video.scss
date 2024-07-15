@@ -1,76 +1,68 @@
-@use '../../styles/partials/mixins' as *;
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
 .main-video {
-    flex-direction: column;
-    padding-top: 0;
-    margin: 0.8rem 0 0;
+  flex-direction: column;
+  padding-top: 0;
+  margin: 0.8rem 0 0;
 
-    &__video {
-        background-color: $BrainFlix-DarkBlack;
-
-    }
+  &__video {
+    background-color: $BrainFlix-DarkBlack;
+  }
 }
 
 .main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &__video-details {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
-
-    &__video-details {
-        display: flex;
-        flex-direction: column;
-        gap: 1.6rem;
-    }
-
+  }
 }
-
 
 .video-details {
+  &__group {
+    @include font-type($regular, 1.8rem, 1.3rem, $Silver);
+  }
 
-    &__group {
-        @include font-type($regular, 1.8rem, 1.3rem, $Silver);
+  &__username {
+    @include font-type($demi, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+  }
+
+  &__stats {
+    display: flex;
+    gap: 7rem;
+    border-top: 1px solid $divider-default;
+    border-bottom: 1px solid $divider-default;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    @include tablet {
+      border-top: none;
+      justify-content: space-between;
+      align-items: center;
     }
+  }
 
-    &__username {
-        @include font-type($demi, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
     }
+  }
 
-    &__stats {
-        display:flex;
-        gap: 7rem;
-        border-top: 1px solid $divider-default;
-        border-bottom: 1px solid $divider-default;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+  &__numbers {
+    display: flex;
+    gap: 1rem;
+  }
 
-        @include tablet {
-            border-top: none;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-    }
-
-    &__group{
-        display: flex;
-        flex-direction: column;
-        gap:1.6rem;
-        @include tablet {
-            flex-direction: row;
-            align-items: center;
-        }
-    }
-
-    &__numbers {
-        display: flex;
-        gap: 1rem;
-    }
-
-    &__description {
-        @include font-type($regular, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
-    }
+  &__description {
+    @include font-type($regular, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+  }
 }
-
-
-

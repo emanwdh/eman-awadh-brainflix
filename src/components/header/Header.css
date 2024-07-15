@@ -70,6 +70,10 @@
 }
 
 .button--upload {
+  background-image: url("../../assets/Font/Icons/upload.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem;
+  padding-left: 4rem;
   font-family: Avenir Next;
   font-weight: 600;
   line-height: 3.2rem;

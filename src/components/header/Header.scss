@@ -56,6 +56,11 @@
 }
 
 .button--upload {
+    background-image: url("../../assets/Font/Icons/upload.svg");
+    background-repeat: no-repeat;
+    background-position: 1rem;
+    padding-left: clamp(3.5rem, 4rem, 5rem);
+
   @include font-type($demi, 3.2rem, 1.6rem, $White);
   height: 4.5rem;
 
