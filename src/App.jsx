@@ -1,34 +1,31 @@
 import { useState } from "react";
 import "./App.scss";
-import Header from "./components/header/Header";
-import MainVideo from "./components/main-video/Main-Video";
-import CommentForm from "./components/comment-form/CommentForm";
-import VideoSideBar from "./components/video-side-bar/VideoSideBar";
-import SiteData from "./data/video-details.json";
-import MainCommentCounter from "./components/main-comment-counter/MainCommentCounter";
+import Header from "./components/Header/Header";
+import MainVideo from "./components/MainVideo/MainVideo";
+import CommentForm from "./components/CommentForm/CommentForm";
+import VideoSideBar from "./components/VideoSideBar/VideoSideBar";
+import siteData from "./data/video-details.json";
+import MainCommentCounter from "./components/MainCommentCounter/MainCommentCounter";
 import MainCommentsSection from "./components/MainCommentsSection/MainCommentsSection";
-import SideBarVideos from "./components/side-bar-videos/Side-Bar-Videos";
-import Video from "./components/Video/Video"
+import SideBarVideos from "./components/SideBarVideos/SideBarVideos";
+import Video from "./components/Video/Video";
 
 function App() {
-  const [VideoList, setVideoList] = useState(
-    SiteData.slice(1, SiteData.length)
+  const [videoList, setVideoList] = useState(
+    siteData.slice(1, siteData.length)
   );
-  const [VideoMain, setMainVideo] = useState(SiteData[0]);
 
-  const MainVideoHandler = (id) => {
-    const newMainVideo = SiteData.filter((video) => video.id == id);
-    console.log(newMainVideo[0]);
-    setMainVideo((VideoMain) => newMainVideo[0]);
-    console.log(VideoMain);
+  const [videoMain, setMainVideo] = useState(siteData[0]);
+
+  const mainVideoHandler = (id) => {
+    const newMainVideo = siteData.filter((video) => video.id == id);
+    setMainVideo((videoMain) => newMainVideo[0]);
   };
 
-  const MoveHandler = (id) => {
-    const newArray = SiteData.filter((video) => video.id !== id);
+  const moveHandler = (id) => {
+    const newArray = siteData.filter((video) => video.id !== id);
     setVideoList(newArray);
-    console.log(newArray);
-    console.log(id);
-    MainVideoHandler(id);
+    mainVideoHandler(id);
   };
 
   function relativeDate(date) {
@@ -68,31 +65,27 @@ function App() {
   return (
     <>
       <Header />
-      <Video 
-         VideoMain={VideoMain}
-        />
+      <Video videoMain={videoMain} />
       <div className="main-section section">
         <div className="main-video-section section">
           <MainVideo
             relativeDate={relativeDate}
-            VideoList={VideoList}
-            VideoMain={VideoMain}
+            videoList={videoList}
+            videoMain={videoMain}
             setMainVideo={setMainVideo}
           />
-          <MainCommentCounter VideoMain={VideoMain} />
-          <CommentForm data={SiteData} VideoMain={VideoMain} />
+          <MainCommentCounter videoMain={videoMain} />
+          <CommentForm />
           <MainCommentsSection
-            data={SiteData}
             relativeDate={relativeDate}
-            VideoMain={VideoMain}
+            videoMain={videoMain}
           />
         </div>
         <div className="next-video-section section">
           <VideoSideBar
-            data={SiteData}
             setVideoList={setVideoList}
-            VideoList={VideoList}
-            MoveHandler={MoveHandler}
+            videoList={videoList}
+            moveHandler={moveHandler}
           />
         </div>
       </div>

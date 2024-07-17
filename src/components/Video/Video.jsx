@@ -1,14 +1,14 @@
 import "./Video.scss"
 
-export default function Video ({VideoMain}) {
+export default function Video ({videoMain}) {
 
     return (
     <>
     <video
         controls
         className="main-video__video section"
-        src={VideoMain.video}
-        poster={VideoMain.image}>
+        src={videoMain.video}
+        poster={videoMain.image}>
     </video>
     </>
     

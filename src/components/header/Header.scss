@@ -33,7 +33,7 @@
 .search-bar {
   &__search {
     flex: 8;
-    background-image: url("../../assets/Font/Icons/search.svg");
+    background-image: url("../../assets/Icons/search.svg");
     background-repeat: no-repeat;
     background-position: 1rem;
     padding-left: clamp(3.5rem, 4rem, 5rem);
@@ -56,7 +56,7 @@
 }
 
 .button--upload {
-    background-image: url("../../assets/Font/Icons/upload.svg");
+    background-image: url("../../assets/Icons/upload.svg");
     background-repeat: no-repeat;
     background-position: 1rem;
     padding-left: clamp(3.5rem, 4rem, 5rem);

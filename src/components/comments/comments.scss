@@ -4,7 +4,6 @@
 .comment{
     display:flex;
     gap: 1.6rem;
-    position: relative;
 
     &__info{
         display: flex;
@@ -12,12 +11,16 @@
         gap:1rem;
     }
 
+    &__info-group{
+        display:flex;
+        justify-content: space-between;
+    }
+
     &__username{
         font-weight: $demi;
     }
 
     &__date{
-        position: absolute;
         right: 0;
     }
 
