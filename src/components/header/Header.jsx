@@ -1,6 +1,6 @@
 import BrainFlixLogo from '../../assets/Logo/BrainFlix-logo.svg'
 import './Header.scss'
-import AvatarImage from "../../assets/Font/Images/Mohan-muruge.jpg"
+import AvatarImage from "../../assets/Images/Mohan-muruge.jpg"
 
 function Header() {
 

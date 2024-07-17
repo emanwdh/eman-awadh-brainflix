@@ -1,6 +1,6 @@
 import MainCommentCounter from "../main-comment-counter/MainCommentCounter";
 import "./CommentForm.scss"
-import AvatarImage from "../../assets/Font/Images/Mohan-muruge.jpg"
+import AvatarImage from "../../assets/Images/Mohan-muruge.jpg"
 
 export default function CommentForm({ data, VideoMain }) {
   return (
