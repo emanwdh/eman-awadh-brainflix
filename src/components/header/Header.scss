@@ -13,7 +13,7 @@
     height: 2rem;
 
     @include tablet {
-        height: 2.5rem;
+      height: 2.5rem;
     }
   }
 
@@ -40,7 +40,7 @@
     @include tablet {
       width: 35%;
       flex: none;
-      height: 4.5rem; 
+      height: 4.5rem;
       padding-left: 3.5rem;
     }
   }
@@ -48,25 +48,27 @@
   &__avatar {
     flex: 1;
     @include tablet {
-    flex: none;
-    height: 4.5rem;
-    width: 4.5rem;
+      flex: none;
+      height: 4.5rem;
+      width: 4.5rem;
     }
   }
 }
 
 .button--upload {
-    background-image: url("../../assets/Icons/upload.svg");
-    background-repeat: no-repeat;
-    background-position: 1rem;
-    padding-left: clamp(3.5rem, 4rem, 5rem);
+  background-image: url("../../assets/Icons/upload.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem;
+  padding-left: clamp(3.5rem, 4rem, 5rem);
 
   @include font-type($demi, 3.2rem, 1.6rem, $White);
   height: 4.5rem;
+}
 
+.button--link {
   @include tablet {
     position: absolute;
-    width: 30%;
     right: 11%;
+    width: 30%;
   }
 }

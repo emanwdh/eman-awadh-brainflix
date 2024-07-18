@@ -1,0 +1,15 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    &__input-field {
+        display:flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+}

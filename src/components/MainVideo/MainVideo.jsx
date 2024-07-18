@@ -3,7 +3,6 @@ import likesIcon from "../../assets/Icons/likes.svg";
 import viewsIcon from "../../assets/Icons/views.svg";
 
 export default function MainVideo({
-  data,
   relativeDate,
   videoMain,
 }) {

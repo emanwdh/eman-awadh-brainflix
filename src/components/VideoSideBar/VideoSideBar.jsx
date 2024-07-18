@@ -1,9 +1,8 @@
 import SideBarVideos from "../SideBarVideos/SideBarVideos";
 import './VideoSideBar.scss';
-import { useState } from "react";
 
 
-export default function  VideoSideBar({videoList, moveHandler, setVideoList}) {
+export default function  VideoSideBar({videoList, moveHandler, setVideoList, videoMain}) {
 
         return (
             <>

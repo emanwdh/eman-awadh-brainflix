@@ -1,6 +1,7 @@
 import BrainFlixLogo from '../../assets/Logo/BrainFlix-logo.svg'
 import './Header.scss'
 import AvatarImage from "../../assets/Images/Mohan-muruge.jpg"
+import { Link } from 'react-router-dom'
 
 function Header() {
 
@@ -12,7 +13,7 @@ function Header() {
           <input className="search-bar__search" type = "text" placeholder = "Search"></input>
           <span><img className="search-bar__avatar avatar" src = {AvatarImage}/></span>
        </div>
-       <button className="button button--upload" type="submit">Upload</button>
+       <Link className="button--link" to = "/upload"><button className="button button--upload" type="submit">Upload</button></Link>
     </header>
   )
 }

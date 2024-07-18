@@ -1,14 +1,9 @@
 import { useState } from "react";
 import "./App.scss";
-import Header from "./components/Header/Header";
-import MainVideo from "./components/MainVideo/MainVideo";
-import CommentForm from "./components/CommentForm/CommentForm";
-import VideoSideBar from "./components/VideoSideBar/VideoSideBar";
 import siteData from "./data/video-details.json";
-import MainCommentCounter from "./components/MainCommentCounter/MainCommentCounter";
-import MainCommentsSection from "./components/MainCommentsSection/MainCommentsSection";
-import SideBarVideos from "./components/SideBarVideos/SideBarVideos";
-import Video from "./components/Video/Video";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./Pages/HomePage/HomePage";
+import UploadPage from "./Pages/UploadPage/UploadPage";
 
 function App() {
   const [videoList, setVideoList] = useState(
@@ -18,8 +13,8 @@ function App() {
   const [videoMain, setMainVideo] = useState(siteData[0]);
 
   const mainVideoHandler = (id) => {
-    const newMainVideo = siteData.filter((video) => video.id == id);
-    setMainVideo((videoMain) => newMainVideo[0]);
+    const newMainVideo = siteData.find((video) => video.id == id);
+    setMainVideo((videoMain) => newMainVideo);
   };
 
   const moveHandler = (id) => {
@@ -63,33 +58,24 @@ function App() {
   }
 
   return (
-    <>
-      <Header />
-      <Video videoMain={videoMain} />
-      <div className="main-section section">
-        <div className="main-video-section section">
-          <MainVideo
-            relativeDate={relativeDate}
-            videoList={videoList}
+    <BrowserRouter>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <HomePage
             videoMain={videoMain}
+            videoList={videoList}
+            relativeDate={relativeDate}
             setMainVideo={setMainVideo}
-          />
-          <MainCommentCounter videoMain={videoMain} />
-          <CommentForm />
-          <MainCommentsSection
-            relativeDate={relativeDate}
-            videoMain={videoMain}
-          />
-        </div>
-        <div className="next-video-section section">
-          <VideoSideBar
             setVideoList={setVideoList}
-            videoList={videoList}
             moveHandler={moveHandler}
           />
-        </div>
-      </div>
-    </>
+        }
+      ></Route>
+      <Route path="upload" element={<UploadPage />}></Route>
+    </Routes>
+  </BrowserRouter>
   );
 }
 
