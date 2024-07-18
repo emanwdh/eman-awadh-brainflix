@@ -1,7 +1,7 @@
-export default function SideBarVideos ({video, moveHandler, id}) {
+export default function SideBarVideos ({video}) {
 
     return (
-        <div className = "next-video" onClick={()=>{moveHandler(id)}}>
+        <div className = "next-video">
                 <img className="next-video__preview" src = {video.image}></img>
                 <div className="next-video__description">
                     <p className="next-video__title">{video.title}</p>

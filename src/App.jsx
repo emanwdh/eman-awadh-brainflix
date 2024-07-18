@@ -1,27 +1,47 @@
 import { useState } from "react";
 import "./App.scss";
-import siteData from "./data/video-details.json";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import UploadPage from "./Pages/UploadPage/UploadPage";
+import axios from "axios";
+import { useEffect } from "react";
 
 function App() {
-  const [videoList, setVideoList] = useState(
-    siteData.slice(1, siteData.length)
-  );
+  const [videoList, setVideoList] = useState();
 
-  const [videoMain, setMainVideo] = useState(siteData[0]);
+  const [videoMain, setMainVideo] = useState();
 
-  const mainVideoHandler = (id) => {
-    const newMainVideo = siteData.find((video) => video.id == id);
-    setMainVideo((videoMain) => newMainVideo);
-  };
+  useEffect(() => {
+    const apiKey = `f1bbc4c0-4138-43f4-a76e-43a19f457007`;
+    const baseURL = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
 
-  const moveHandler = (id) => {
-    const newArray = siteData.filter((video) => video.id !== id);
-    setVideoList(newArray);
-    mainVideoHandler(id);
-  };
+    async function getData() {
+      try {
+        const response = await axios.get(
+          `${baseURL}videos?api_key=<${apiKey}>`
+        );
+        const videosArray = response.data;
+        setVideoList(videosArray);
+        console.log(videoList);
+      } catch (error) {
+        console.log(error);
+      }
+
+      try {
+        const response = await axios.get(
+          `${baseURL}videos/84e96018-4022-434e-80bf-000ce4cd12b8?api_key=<${apiKey}>`
+        );
+        const mainVideoObject = response.data;
+        setMainVideo(mainVideoObject);
+        console.log(videoMain);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    getData();
+  },[]);
+
 
   function relativeDate(date) {
     const diff = Math.round((new Date() - new Date(date)) / 1000);
@@ -57,25 +77,30 @@ function App() {
     }
   }
 
+  //loading state 
+
+  if (!videoList || !videoMain) {
+    return <>Loading Videos...</>;
+  }
+
   return (
     <BrowserRouter>
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <HomePage
-            videoMain={videoMain}
-            videoList={videoList}
-            relativeDate={relativeDate}
-            setMainVideo={setMainVideo}
-            setVideoList={setVideoList}
-            moveHandler={moveHandler}
-          />
-        }
-      ></Route>
-      <Route path="upload" element={<UploadPage />}></Route>
-    </Routes>
-  </BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              videoMain={videoMain}
+              videoList={videoList}
+              relativeDate={relativeDate}
+              setMainVideo={setMainVideo}
+              setVideoList={setVideoList}
+            />
+          }
+        ></Route>
+        <Route path="upload" element={<UploadPage />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

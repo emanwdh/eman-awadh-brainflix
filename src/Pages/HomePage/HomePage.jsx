@@ -8,7 +8,7 @@ import MainCommentsSection from "../../components/MainCommentsSection/MainCommen
 import SideBarVideos from "../../components/SideBarVideos/SideBarVideos";
 import Video from "../../components/Video/Video";
 
-export default function HomePage({videoMain, videoList, relativeDate, setMainVideo, setVideoList, moveHandler}) {
+export default function HomePage({videoMain, videoList, relativeDate}) {
 
 
 
@@ -20,9 +20,7 @@ export default function HomePage({videoMain, videoList, relativeDate, setMainVid
         <div className="main-video-section section">
           <MainVideo
             relativeDate={relativeDate}
-            videoList={videoList}
             videoMain={videoMain}
-            setMainVideo={setMainVideo}
           />
           <MainCommentCounter videoMain={videoMain} />
           <CommentForm />
@@ -34,9 +32,6 @@ export default function HomePage({videoMain, videoList, relativeDate, setMainVid
         <div className="next-video-section section">
           <VideoSideBar
             videoList={videoList}
-            setVideoList={setVideoList}
-            moveHandler={moveHandler}
-            videoMain={videoMain}
           />
         </div>
       </div>
