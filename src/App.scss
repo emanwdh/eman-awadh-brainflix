@@ -182,3 +182,11 @@ p {
     }
   }
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover{
+  background-color: $Mercury;
+}
