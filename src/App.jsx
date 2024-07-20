@@ -11,23 +11,6 @@ function App() {
 
   const [videoMain, setMainVideo] = useState(null);
 
-  useEffect(() => {
-    const apiKey = `f1bbc4c0-4138-43f4-a76e-43a19f457007`;
-    const baseURL = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
-
-    async function getVideosArray() {
-      try {
-        const response = await axios.get(
-          `${baseURL}videos?api_key=<${apiKey}>`
-        );
-        const videosArray = response.data;
-        setVideoList(videosArray);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getVideosArray();
-  }, []);
 
   function relativeDate(date) {
     const diff = Math.round((new Date() - new Date(date)) / 1000);
@@ -66,29 +49,46 @@ function App() {
   //loading state
 
   if (!videoList) {
-    return <h1>Loading</h1>;
+    return (
+      <div className="section__loading">
+        <h1 className="loading__title">Loading Videos...</h1>
+      </div>
+    );
   }
 
-  return (
-    <BrowserRouter>
-      <Routes>
+    return (
+      <BrowserRouter>
+        <Routes>
         <Route
-          path={"/video/:id"}
-          element={
-            <HomePage
-              relativeDate={relativeDate}
-              videoList={videoList}
-              setMainVideo={setMainVideo}
-              videoMain={videoMain}
-              setVideoList={setVideoList}
-            />
-          }
-        ></Route>
-        <Route path="upload" element={<UploadPage />}></Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+            path={"/"}
+            element={
+              <HomePage
+                relativeDate={relativeDate}
+                videoList={videoList}
+                setMainVideo={setMainVideo}
+                videoMain={videoMain}
+                setVideoList={setVideoList}
+              />
+            }
+          ></Route>
+          <Route
+            path={"/video/:id"}
+            element={
+              <HomePage
+                relativeDate={relativeDate}
+                videoList={videoList}
+                setMainVideo={setMainVideo}
+                videoMain={videoMain}
+                setVideoList={setVideoList}
+              />
+            }
+          ></Route>
+          <Route path="upload" element={<UploadPage />}></Route>
+        </Routes>
+      </BrowserRouter>
+    );
+  }
+
 
 export default App;
 

@@ -190,3 +190,9 @@ a:link {
 a:hover{
   background-color: $Mercury;
 }
+
+.section__loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

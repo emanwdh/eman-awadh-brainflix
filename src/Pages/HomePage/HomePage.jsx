@@ -7,7 +7,7 @@ import MainCommentCounter from "../../components/MainCommentCounter/MainCommentC
 import MainCommentsSection from "../../components/MainCommentsSection/MainCommentsSection";
 import SideBarVideos from "../../components/SideBarVideos/SideBarVideos";
 import Video from "../../components/Video/Video";
-import { useParams } from "react-router-dom";
+import { useParams, useMatch } from "react-router-dom";
 import { useEffect } from "react";
 import axios from "axios";
 
@@ -21,38 +21,60 @@ export default function HomePage({
   const { id } = useParams();
   const apiKey = `f1bbc4c0-4138-43f4-a76e-43a19f457007`;
   const baseURL = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
+  const homePageMatch = useMatch("/");
+  const dynamicVideoMatch = useMatch("video/:id");
 
-
- 
-
-
-
-
- 
-
-  
-  useEffect(() => {
-    async function getMainVideo() {
-      try {
-        const response = await axios.get(
-          `${baseURL}videos/${id}?api_key=<${apiKey}>`
-        );
-        const mainVideoObject = response.data;
-        setMainVideo(mainVideoObject);
-      } catch (error) {
-        console.error(error);
+  useEffect(
+    () => {
+      async function getMainVideo(id) {
+        try {
+          const response = await axios.get(
+            `${baseURL}videos/${id}?api_key=<${apiKey}>`
+          );
+          const mainVideoObject = response.data;
+          setMainVideo(mainVideoObject);
+        } catch (error) {
+          console.error(error);
+        }
       }
-    }
-    getMainVideo();
-  }, [id]);
 
+      async function getVideosArray() {
+        try {
+          const response = await axios.get(
+            `${baseURL}videos?api_key=<${apiKey}>`
+          );
+          const videosArray = response.data;
+          setVideoList(videosArray);
 
+          if (homePageMatch !== null) {
+            const defaultVideo = videosArray[0];
+            getMainVideo(defaultVideo.id)
 
-  if (videoMain == null) {
-    return <h1>Loading Main Video...</h1>;
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      if (homePageMatch !== null) {
+        getVideosArray();
+        
+      } else if (dynamicVideoMatch !== null) {
+        getVideosArray();
+        getMainVideo(id);
+      }
+    },
+    [id],
+    [homePageMatch]
+  );
+
+  if (videoMain == null || videoList == null) {
+    return (
+      <div className="section__loading">
+        <h1 className="loading__title">Loading Main Video...</h1>
+      </div>
+    );
   }
-
-  console.log(videoMain);
 
   return (
     <>
