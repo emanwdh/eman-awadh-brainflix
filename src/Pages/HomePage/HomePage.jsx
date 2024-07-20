@@ -16,14 +16,22 @@ export default function HomePage({
   videoList,
   relativeDate,
   setMainVideo,
+  setVideoList,
 }) {
   const { id } = useParams();
+  const apiKey = `f1bbc4c0-4138-43f4-a76e-43a19f457007`;
+  const baseURL = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
 
 
+ 
+
+
+
+
+ 
+
+  
   useEffect(() => {
-    const apiKey = `f1bbc4c0-4138-43f4-a76e-43a19f457007`;
-    const baseURL = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
-
     async function getMainVideo() {
       try {
         const response = await axios.get(
@@ -36,12 +44,12 @@ export default function HomePage({
       }
     }
     getMainVideo();
-  }, id);
+  }, [id]);
 
-  console.log(videoMain);
 
-  if(videoMain == null){
-    return <h1>Loading Main Video...</h1>
+
+  if (videoMain == null) {
+    return <h1>Loading Main Video...</h1>;
   }
 
   console.log(videoMain);
@@ -61,7 +69,7 @@ export default function HomePage({
           />
         </div>
         <div className="next-video-section section">
-          <VideoSideBar videoList={videoList} />
+          <VideoSideBar videoList={videoList} videoMain={videoMain} id={id} />
         </div>
       </div>
     </>

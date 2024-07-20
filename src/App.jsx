@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.scss";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import UploadPage from "./Pages/UploadPage/UploadPage";
 import axios from "axios";
@@ -10,7 +10,6 @@ function App() {
   const [videoList, setVideoList] = useState([]);
 
   const [videoMain, setMainVideo] = useState(null);
-
 
   useEffect(() => {
     const apiKey = `f1bbc4c0-4138-43f4-a76e-43a19f457007`;
@@ -74,13 +73,14 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/:id"
+          path={"/video/:id"}
           element={
             <HomePage
               relativeDate={relativeDate}
               videoList={videoList}
               setMainVideo={setMainVideo}
               videoMain={videoMain}
+              setVideoList={setVideoList}
             />
           }
         ></Route>
@@ -91,3 +91,7 @@ function App() {
 }
 
 export default App;
+
+// Navigate to "/" and display default video
+//"/" route and "/videos/:id" route should display the same component with different data
+//use navigate to, to navigate to the url with the default video id
