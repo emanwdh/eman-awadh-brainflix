@@ -102,8 +102,16 @@ textarea::placeholder{
 }
 
 label {
-  color: $Silver;
   text-transform: uppercase;
+  @include font-type($regular, 1.8rem, 1.3rem, $Silver);
+
+  @include tablet {
+    @include font-type($regular, 2.2rem, 1.4rem, $Silver);
+  }
+
+  @include desktop {
+    @include font-type($regular, 2.2rem, 1.4rem, $Silver);
+  }
 }
 
 .avatar {

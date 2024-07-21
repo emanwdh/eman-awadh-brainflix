@@ -17,13 +17,65 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  &__upload-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    @include desktop {
+      flex-direction: row;
+      border-top: 1px solid $divider-default;
+      border-bottom: 1px solid $divider-default;
+      padding: 2.4rem 0rem;
+    }
+  }
+
+  &__text-options {
+    display: flex;
+    flex-direction: column;
+    gap:1.6rem;
+
+    @include desktop {
+      width: 70%;
+      gap: 2.4rem;
+    }
+  }
+
+  &__add-thumbnail {
+    @include desktop {
+      width: 30%;
+    }
+  }
+
   &__text-area {
     height: 7rem;
   }
 
-  &__cancel{
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+
+    @include tablet {
+      flex-direction: row-reverse;
+      align-items: center;
+      gap: 8rem;
+    }
+  }
+
+  &__cancel {
     text-transform: uppercase;
     text-align: center;
-    color: $button-default;
+    font-weight: $demi;
+    @include font-type($demi, 3.2rem, 1.6rem, $button-default);
+  }
+}
+
+.upload--link {
+  width: 100%;
+
+  @include tablet {
+    width: 30%;
   }
 }
