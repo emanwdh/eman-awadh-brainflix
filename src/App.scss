@@ -37,6 +37,7 @@ button {
   text-transform: uppercase;
   background-color: $button-default;
   color: $button-font-default;
+  width: 100%;
 }
 
 button:hover {
@@ -187,12 +188,19 @@ a:link {
   text-decoration: none;
 }
 
-a:hover{
-  background-color: $Mercury;
-}
 
 .section__loading {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.button--post {
+  background-image: url("./assets/Icons/upload.svg");
+  background-repeat: no-repeat;
+  background-position: 1rem;
+  padding: 0.5rem 1rem;
+
+  @include font-type($demi, 3.2rem, 1.6rem, $White);
+  height: 4.5rem;
 }
