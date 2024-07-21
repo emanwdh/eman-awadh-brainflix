@@ -31,6 +31,11 @@
 }
 
 .input-field {
+
+  @include tablet {
+    align-items:center;
+  }
+
   &__label {
     @include font-type($demi, 1.8rem, 1.3rem, $Silver);
 
@@ -42,11 +47,18 @@
   &__textarea {
     height: 60%;
     @include tablet {
-      width: 60%;
       height: 100%;
     }
   }
-
+  &__inputs {
+    display:flex;
+    flex-direction: column;
+    gap:1.6rem;
+    @include tablet {
+      width: 60%;
+    }
+    
+  }
   &__button {
 
     background-image: url("../../assets/Icons/add_comment.svg");
