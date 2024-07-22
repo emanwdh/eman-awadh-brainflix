@@ -48,8 +48,7 @@ export default function HomePage({
 
           if (homePageMatch !== null) {
             const defaultVideo = videosArray[0];
-            getMainVideo(defaultVideo.id)
-
+            getMainVideo(defaultVideo.id);
           }
         } catch (error) {
           console.log(error);
@@ -58,14 +57,14 @@ export default function HomePage({
 
       if (homePageMatch !== null) {
         getVideosArray();
-        
       } else if (dynamicVideoMatch !== null) {
         getVideosArray();
         getMainVideo(id);
       }
     },
     [id],
-    [homePageMatch]
+    [homePageMatch],
+    [videoMain]
   );
 
   if (videoMain == null || videoList == null) {
@@ -84,7 +83,12 @@ export default function HomePage({
         <div className="main-video-section section">
           <MainVideo relativeDate={relativeDate} videoMain={videoMain} />
           <MainCommentCounter videoMain={videoMain} />
-          <CommentForm />
+          <CommentForm
+            apiKey={apiKey}
+            baseURL={baseURL}
+            setMainVideo={setMainVideo}
+            videoMain={videoMain}
+          />
           <MainCommentsSection
             relativeDate={relativeDate}
             videoMain={videoMain}

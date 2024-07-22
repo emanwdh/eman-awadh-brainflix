@@ -11,7 +11,6 @@ function App() {
 
   const [videoMain, setMainVideo] = useState(null);
 
-
   function relativeDate(date) {
     const diff = Math.round((new Date() - new Date(date)) / 1000);
     const minute = 60;
@@ -41,12 +40,12 @@ function App() {
       return Math.floor(diff / week) + " weeks ago";
     } else if (diff < year) {
       return Math.floor(diff / month) + " months ago";
+    } else if (Math.floor(diff / year) == 1) {
+      return Math.floor(diff / year) + " year ago";
     } else {
       return Math.floor(diff / year) + " years ago";
     }
   }
-
-  //loading state
 
   if (!videoList) {
     return (
@@ -56,42 +55,39 @@ function App() {
     );
   }
 
-    return (
-      <BrowserRouter>
-        <Routes>
+  return (
+    <BrowserRouter>
+      <Routes>
         <Route
-            path={"/"}
-            element={
-              <HomePage
-                relativeDate={relativeDate}
-                videoList={videoList}
-                setMainVideo={setMainVideo}
-                videoMain={videoMain}
-                setVideoList={setVideoList}
-              />
-            }
-          ></Route>
-          <Route
-            path={"/video/:id"}
-            element={
-              <HomePage
-                relativeDate={relativeDate}
-                videoList={videoList}
-                setMainVideo={setMainVideo}
-                videoMain={videoMain}
-                setVideoList={setVideoList}
-              />
-            }
-          ></Route>
-          <Route path="upload" element={<UploadPage />}></Route>
-        </Routes>
-      </BrowserRouter>
-    );
-  }
-
+          path={"/"}
+          element={
+            <HomePage
+              relativeDate={relativeDate}
+              videoList={videoList}
+              setMainVideo={setMainVideo}
+              videoMain={videoMain}
+              setVideoList={setVideoList}
+            />
+          }
+        ></Route>
+        <Route
+          path={"/video/:id"}
+          element={
+            <HomePage
+              relativeDate={relativeDate}
+              videoList={videoList}
+              setMainVideo={setMainVideo}
+              videoMain={videoMain}
+              setVideoList={setVideoList}
+            />
+          }
+        ></Route>
+        <Route path="upload" element={<UploadPage />}></Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;
 
-// Navigate to "/" and display default video
-//"/" route and "/videos/:id" route should display the same component with different data
-//use navigate to, to navigate to the url with the default video id
+
