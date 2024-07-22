@@ -69,11 +69,6 @@ body {
   color: $font-color-default;
 }
 
-p {
-  @include desktop {
-    @include font-type($regular, 2.2rem, 1.4rem, $BrainFlix-DarkBlack);
-  }
-}
 
 input,
 textarea {
@@ -139,7 +134,7 @@ h1 {
   margin-top: 0.8rem;
 }
 
-p {
+p, input, textarea {
   @include font-type($regular, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
 
   @include tablet {

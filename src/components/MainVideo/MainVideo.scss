@@ -29,7 +29,7 @@
   }
 
   &__username {
-    @include font-type($demi, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
+    font-weight: $demi;
   }
 
   &__stats {
@@ -62,7 +62,5 @@
     gap: 1rem;
   }
 
-  &__description {
-    @include font-type($regular, 1.8rem, 1.3rem, $BrainFlix-DarkBlack);
-  }
+  
 }
