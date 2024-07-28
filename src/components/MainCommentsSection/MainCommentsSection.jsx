@@ -1,8 +1,8 @@
 import Comments from "../Comments/Comments";
 import "./MainCommentsSection.scss";
 
-export default function MainCommentsSection({ relativeDate, videoMain }) {
-  const commentsArray = videoMain.comments;
+export default function MainCommentsSection({ relativeDate, videoMain, comments }) {
+  const commentsArray = comments;
 
   if(commentsArray == null) {
     return <div className="main-comments section">

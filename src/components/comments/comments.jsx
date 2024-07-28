@@ -1,7 +1,7 @@
 import './Comments.scss'
 
 
-export default function Comments({data, relativeDate, comment}) {
+export default function Comments({ relativeDate, comment}) {
     return (
     
         <div className="comment">

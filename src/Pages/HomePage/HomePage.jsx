@@ -17,11 +17,14 @@ export default function HomePage({
   relativeDate,
   setMainVideo,
   setVideoList,
+  setComments, 
+  comments
 }) {
   const { id } = useParams();
   const newBaseURL = 'http://localhost:5050/'
   const homePageMatch = useMatch("/");
   const dynamicVideoMatch = useMatch("video/:id");
+
 
   useEffect(
     () => {
@@ -31,7 +34,8 @@ export default function HomePage({
             `${newBaseURL}videos/${id}`
           );
           const mainVideoObject = response.data;
-          setMainVideo(mainVideoObject[0]);
+          setMainVideo(mainVideoObject);
+          setComments(mainVideoObject.comments);
         } catch (error) {
           console.error(error);
         }
@@ -48,6 +52,7 @@ export default function HomePage({
           if (homePageMatch !== null) {
             const defaultVideo = videosArray[0];
             getMainVideo(defaultVideo.id);
+            setComments(videoMain.comments);
           }
         } catch (error) {
           console.log(error);
@@ -81,14 +86,18 @@ export default function HomePage({
       <div className="main-section section">
         <div className="main-video-section section">
           <MainVideo relativeDate={relativeDate} videoMain={videoMain} />
-          <MainCommentCounter videoMain={videoMain} />
+          <MainCommentCounter videoMain={videoMain} comments={comments} />
           <CommentForm
             setMainVideo={setMainVideo}
             videoMain={videoMain}
+            newBaseURL={newBaseURL}
+            setComments={setComments}
+    
           />
           <MainCommentsSection
             relativeDate={relativeDate}
             videoMain={videoMain}
+            comments={comments}
           />
         </div>
         <div className="next-video-section section">

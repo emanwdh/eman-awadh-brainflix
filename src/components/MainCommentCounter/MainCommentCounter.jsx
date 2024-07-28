@@ -1,6 +1,6 @@
 import './MainCommentCounter.scss'
 
-export default function MainCommentCounter({videoMain}) {
+export default function MainCommentCounter({videoMain, comments}) {
 
     if(videoMain.comments  == null){
         return(
@@ -9,7 +9,7 @@ export default function MainCommentCounter({videoMain}) {
     }
     return (
         <>
-        <p className="main-comments-counter section">{videoMain.comments.length} Comments</p>    
+        <p className="main-comments-counter section">{comments.length} Comments</p>    
         </>
     )
 

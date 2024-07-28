@@ -1,53 +1,47 @@
 import MainCommentCounter from "../MainCommentCounter/MainCommentCounter";
 import "./CommentForm.scss";
 import AvatarImage from "../../assets/Images/Mohan-muruge.jpg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 export default function CommentForm({
-  apiKey,
-  baseURL,
   videoMain,
   setMainVideo,
+  newBaseURL, setVideoList, setComments
 }) {
-  const [username, setUserName] = useState("");
-  const [commentText, setCommentText] = useState("");
 
-  function usernameHandler(e) {
-    setUserName(e.target.value);
-  }
-
-  function commentHandler(e) {
-    setCommentText(e.target.value);
-  }
+  const formRef = useRef();
 
   function onCommentSubmit(e) {
     e.preventDefault();
-    let newComment = { name: username, comment: commentText };
+    let commentText = formRef.current.text.value;
+    let userName = formRef.current.username.value;
 
-    async function postComment(newComment) {
+
+    async function postComment() {
       try {
-        await axios.post(
-          `${baseURL}videos/${videoMain.id}/comments?api_key=<${apiKey}>`,
-          newComment,
+        const response = await axios.post(
+          `${newBaseURL}videos/comments/post`,
           {
-            header: {
-              "Content-Type": "application/json",
-            },
+            name: userName, 
+            comment: commentText, 
+            timestamp: Date.now(),
+            videoID: videoMain.id  
           }
         );
-
+    
+        setComments(response.data);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     }
 
-    postComment(newComment);
+    postComment();
   }
 
   return (
     <>
-      <form className="comment-form" onSubmit={onCommentSubmit}>
+      <form className="comment-form" onSubmit={onCommentSubmit} ref ={formRef}>
         <span>
           <img className="comment-form__avatar avatar" src={AvatarImage} />
         </span>
@@ -57,16 +51,12 @@ export default function CommentForm({
             <input
               className="input-field__input"
               placeholder="Add your name"
-              name="comment-username"
-              value={username}
-              onChange={usernameHandler}
+              id="username"
             ></input>
             <textarea
               className="input-field__textarea"
               placeholder="Add a new comment"
-              name="comment-text"
-              value={commentText}
-              onChange={commentHandler}
+              id="text"
             ></textarea>
           </div>
           <button

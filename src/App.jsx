@@ -11,6 +11,8 @@ function App() {
 
   const [videoMain, setMainVideo] = useState(null);
 
+  const [comments, setComments] = useState([]);
+
   function relativeDate(date) {
     const diff = Math.round((new Date() - new Date(date)) / 1000);
     const minute = 60;
@@ -67,6 +69,8 @@ function App() {
               setMainVideo={setMainVideo}
               videoMain={videoMain}
               setVideoList={setVideoList}
+              setComments={setComments}
+              comments={comments}
             />
           }
         ></Route>
@@ -79,6 +83,8 @@ function App() {
               setMainVideo={setMainVideo}
               videoMain={videoMain}
               setVideoList={setVideoList}
+              setComments={setComments}
+              comments={comments}
             />
           }
         ></Route>
