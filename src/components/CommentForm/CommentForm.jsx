@@ -37,6 +37,7 @@ export default function CommentForm({
     }
 
     postComment();
+    formRef.current.reset();
   }
 
   return (
