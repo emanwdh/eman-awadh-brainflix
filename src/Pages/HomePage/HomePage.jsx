@@ -63,7 +63,7 @@ export default function HomePage({
     },
     [id],
     [homePageMatch],
-    [videoMain]
+    [videoMain], [videoList]
   );
 
   if (videoMain == null || videoList == null) {

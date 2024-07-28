@@ -82,7 +82,10 @@ function App() {
             />
           }
         ></Route>
-        <Route path="upload" element={<UploadPage />}></Route>
+        <Route path="upload" element={<UploadPage
+        videoList={videoList}
+        setVideoList={setVideoList}
+        />}></Route>
       </Routes>
     </BrowserRouter>
   );
