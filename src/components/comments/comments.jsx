@@ -1,7 +1,9 @@
 import './Comments.scss'
 
 
-export default function Comments({ relativeDate, comment}) {
+export default function Comments({ relativeDate, comment, deleteComment}) {
+
+
     return (
     
         <div className="comment">
@@ -12,7 +14,7 @@ export default function Comments({ relativeDate, comment}) {
                     <p className="comment__date">{relativeDate(comment.timestamp)}</p>
                 </div>
                 <p className="comment__text">{comment.comment}</p>
-                
+                <button onClick = {() => deleteComment(comment.id)}>delete</button>
             </div>
         </div>
         

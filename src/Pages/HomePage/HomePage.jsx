@@ -98,6 +98,8 @@ export default function HomePage({
             relativeDate={relativeDate}
             videoMain={videoMain}
             comments={comments}
+            newBaseURL={newBaseURL}
+            setComments={setComments}
           />
         </div>
         <div className="next-video-section section">
