@@ -14,7 +14,7 @@ export default function UploadForm( {videoList, setVideoList}) {
     const descValue = formRef.current.description.value;
     async function addVideo() {
       try{
-        const response = await axios.post(`http://localhost:5050/videos/post`, {title: titleValue, description: descValue });
+        const response = await axios.post(`http://localhost:5050/videos/post`, {title: titleValue, description: descValue, channel: "newUser", likes: 0, views:0, timestamp: Date.now() });
         console.log(response.data);
         setVideoList(response.data);
   

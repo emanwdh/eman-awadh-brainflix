@@ -3,6 +3,12 @@ import "./MainCommentsSection.scss";
 
 export default function MainCommentsSection({ relativeDate, videoMain }) {
   const commentsArray = videoMain.comments;
+
+  if(commentsArray == null) {
+    return <div className="main-comments section">
+      <p>No Comments to Display</p>
+    </div>
+  }
   return (
     <div className="main-comments section">
       {commentsArray
