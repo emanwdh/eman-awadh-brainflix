@@ -19,8 +19,7 @@ export default function HomePage({
   setVideoList,
 }) {
   const { id } = useParams();
-  const apiKey = `f1bbc4c0-4138-43f4-a76e-43a19f457007`;
-  const baseURL = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
+  const newBaseURL = 'http://localhost:5050/'
   const homePageMatch = useMatch("/");
   const dynamicVideoMatch = useMatch("video/:id");
 
@@ -29,10 +28,10 @@ export default function HomePage({
       async function getMainVideo(id) {
         try {
           const response = await axios.get(
-            `${baseURL}videos/${id}?api_key=<${apiKey}>`
+            `${newBaseURL}videos/${id}`
           );
           const mainVideoObject = response.data;
-          setMainVideo(mainVideoObject);
+          setMainVideo(mainVideoObject[0]);
         } catch (error) {
           console.error(error);
         }
@@ -41,7 +40,7 @@ export default function HomePage({
       async function getVideosArray() {
         try {
           const response = await axios.get(
-            `${baseURL}videos?api_key=<${apiKey}>`
+            `${newBaseURL}videos`
           );
           const videosArray = response.data;
           setVideoList(videosArray);
@@ -84,8 +83,6 @@ export default function HomePage({
           <MainVideo relativeDate={relativeDate} videoMain={videoMain} />
           <MainCommentCounter videoMain={videoMain} />
           <CommentForm
-            apiKey={apiKey}
-            baseURL={baseURL}
             setMainVideo={setMainVideo}
             videoMain={videoMain}
           />
