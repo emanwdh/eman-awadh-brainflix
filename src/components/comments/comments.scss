@@ -1,31 +1,38 @@
-@use '../../styles/partials/mixins' as *; 
-@use '../../styles/partials/variables' as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
 
-.comment{
-    display:flex;
-    gap: 1.6rem;
+.comment {
+  display: flex;
+  gap: 1.6rem;
 
-    &__info{
-        display: flex;
-        flex-direction: column;
-        gap:1rem;
-        width:100%;
-    }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+  }
 
-    &__info-group{
-        display:flex;
-        justify-content: space-between;
-    }
+  &__info-group {
+    display: flex;
+    justify-content: space-between;
+  }
 
-    &__username{
-        font-weight: $demi;
-    }
+  &__username {
+    font-weight: $demi;
+  }
 
-    &__date{
-        right: 0;
-    }
-
-
-    
+  &__date {
+    right: 0;
+  }
 }
 
+.button--delete {
+  width: 8rem;
+  background-color: $Mercury;
+  color: $BrainFlix-DarkBlack;
+}
+
+.button--delete:hover {
+  background-color: $BrainFlix-DarkBlack;
+  color: $White;
+}

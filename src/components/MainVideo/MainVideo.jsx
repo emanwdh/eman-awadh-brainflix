@@ -1,8 +1,14 @@
 import "./MainVideo.scss";
 import likesIcon from "../../assets/Icons/likes.svg";
 import viewsIcon from "../../assets/Icons/views.svg";
+import { useState } from "react";
+import axios from "axios";
 
-export default function MainVideo({ relativeDate, videoMain }) {
+export default function MainVideo({ relativeDate, videoMain, newBaseURL }) {
+
+
+
+
   return (
     <>
       <div className="main-video section">

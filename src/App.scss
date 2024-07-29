@@ -38,6 +38,15 @@ button {
   background-color: $button-default;
   color: $button-font-default;
   width: 100%;
+  @include font-type($demi, 1.8rem, 1.3rem, $White);
+
+  @include tablet {
+    @include font-type($demi, 2.2rem, 1.4rem, $White);
+  }
+
+  @include desktop {
+    @include font-type($demi, 2.2rem, 1.4rem, $White);
+  }
 }
 
 button:hover {

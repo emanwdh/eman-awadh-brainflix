@@ -85,7 +85,7 @@ export default function HomePage({
       <Video videoMain={videoMain} />
       <div className="main-section section">
         <div className="main-video-section section">
-          <MainVideo relativeDate={relativeDate} videoMain={videoMain} />
+          <MainVideo relativeDate={relativeDate} videoMain={videoMain} newBaseURL={newBaseURL} />
           <MainCommentCounter videoMain={videoMain} comments={comments} />
           <CommentForm
             setMainVideo={setMainVideo}

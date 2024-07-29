@@ -17,6 +17,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include tablet {
+    padding-bottom:3%;
+  }
 
   &__upload-options {
     display: flex;
@@ -33,7 +36,7 @@
   &__text-options {
     display: flex;
     flex-direction: column;
-    gap:1.6rem;
+    gap: 1.6rem;
 
     @include desktop {
       width: 70%;
@@ -42,6 +45,9 @@
   }
 
   &__add-thumbnail {
+    @include tablet {
+      width: 50%;
+    }
     @include desktop {
       width: 30%;
     }
